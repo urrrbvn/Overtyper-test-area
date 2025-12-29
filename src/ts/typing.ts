@@ -16,6 +16,8 @@ export function handleTyping(e: KeyboardEvent) {
   const expected: string = currentLetter?.innerHTML || " " //мы в конце слова, занчит будем брать за ожидаемое нажатие пробел
   const isLetter: Boolean = key.length === 1 && key !== ' '
   const isSpace: Boolean = key === " "
+  const isBackspace: Boolean = key === "Backspace"
+  const isFirstLetter = currentLetter === currentWord.firstElementChild
 
 
   if (isLetter) {
@@ -42,6 +44,18 @@ export function handleTyping(e: KeyboardEvent) {
     addClass(currentWord.nextElementSibling, 'current')
     removeClass(currentLetter, "current")
     addClass(currentWord.nextElementSibling?.firstElementChild, "current")
+  }
+  if (isBackspace) {
+    if (currentLetter && isFirstLetter) {
+      removeClass(currentWord, 'current')
+      addClass(currentWord.previousElementSibling, 'current')
+
+      removeClass(currentLetter, 'current')
+      addClass(currentWord.previousElementSibling?.lastElementChild, 'current')
+
+      removeClass(currentWord.previousElementSibling?.lastElementChild, 'correct')
+      removeClass(currentWord.previousElementSibling?.lastElementChild, 'incorrect')
+    }
   }
 
   moveCursor()

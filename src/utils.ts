@@ -2,7 +2,7 @@ export function addClass(el: Element | null | undefined, name: string) {
   if (!el) return
   el.className += " " + name
 }
-export function removeClass(el: Element | null, name: string) {
+export function removeClass(el: Element | null | undefined, name: string) {
   if (!el) return
   el.className = el.className.replace(name, '')
 }

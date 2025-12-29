@@ -12,5 +12,5 @@ export function moveCursor() {
   if (!anchor) return
 
   cursor.style.top = anchor.getBoundingClientRect().top + 2 + "px"
-  cursor.style.left = anchor.getBoundingClientRect()[nextLetter ? "left" : "right"] + 2 + "px"
+  cursor.style.left = anchor.getBoundingClientRect()[nextLetter ? "left" : "right"] + 2 + "px" //При отсутствии nextLetter, мы равняем курсор по слову, а значит ставвим его справа
 }
