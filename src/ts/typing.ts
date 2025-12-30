@@ -49,12 +49,21 @@ export function handleTyping(e: KeyboardEvent) {
     if (currentLetter && isFirstLetter) {
       removeClass(currentWord, 'current')
       addClass(currentWord.previousElementSibling, 'current')
-
       removeClass(currentLetter, 'current')
-      addClass(currentWord.previousElementSibling?.lastElementChild, 'current')
+    } else if (currentLetter && !isFirstLetter) {
+      removeClass(currentLetter, 'current')
+      removeClass(currentLetter, 'correct')
+      removeClass(currentLetter, 'incorrect')
 
-      removeClass(currentWord.previousElementSibling?.lastElementChild, 'correct')
-      removeClass(currentWord.previousElementSibling?.lastElementChild, 'incorrect')
+      addClass(currentLetter.previousElementSibling, 'current')
+      removeClass(currentLetter.previousElementSibling, 'correct')
+      removeClass(currentLetter.previousElementSibling, 'incorrect')
+    } else {
+      removeClass(currentWord.lastElementChild, "incorrect")
+      removeClass(currentWord.lastElementChild, "correct")
+      addClass(currentWord.lastElementChild, 'current')
+      // removeClass(currentWord.lastElementChild?.previousElementSibling, 'correct')
+      // removeClass(currentWord.lastElementChild?.previousElementSibling, 'incorrect')
     }
   }
 
