@@ -10,6 +10,10 @@
   animation: blink .3s infinite;
 }
 
+#game.over #cursor {
+  display: none;
+}
+
 @keyframes blink {
   0% {
     opacity: 1;

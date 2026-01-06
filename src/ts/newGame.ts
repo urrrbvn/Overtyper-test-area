@@ -1,7 +1,8 @@
 import { addClass } from "../utils"
 
 const words = "i went to the store today it was raining outside i bought some groceries and saw a cat on the way home the cat was fluffy and orange it looked at me for a second then ran away i got home and made a sandwich it was a good day overall even with the rain and the cat was cute".split(" ")
-
+window.timer = null
+window.gameStartTime = null
 
 function getRandomWord() {
   const randomIndex = Math.ceil(Math.random() * words.length) - 1
