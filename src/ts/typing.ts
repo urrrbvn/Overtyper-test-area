@@ -62,6 +62,9 @@ export function handleTyping(e: KeyboardEvent) {
       removeClass(currentWord.lastElementChild, "incorrect")
       removeClass(currentWord.lastElementChild, "correct")
       addClass(currentWord.lastElementChild, 'current')
+      if (currentWord.lastElementChild?.className.includes('extra')) {
+        currentWord.removeChild(currentWord.lastElementChild)
+      }
       // removeClass(currentWord.lastElementChild?.previousElementSibling, 'correct')
       // removeClass(currentWord.lastElementChild?.previousElementSibling, 'incorrect')
     }
