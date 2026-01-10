@@ -1,5 +1,6 @@
 import { addClass, removeClass } from "../utils"
 import { moveCursor } from "./cursor"
+import { runTimer } from "./timer"
 
 
 
@@ -19,6 +20,9 @@ export function handleTyping(e: KeyboardEvent) {
   const isBackspace: Boolean = key === "Backspace"
   const isFirstLetter = currentLetter === currentWord.firstElementChild
 
+  if (!window.timer && isLetter) {
+    runTimer()
+  }
 
   if (isLetter) {
     if (currentLetter) {
