@@ -60,3 +60,8 @@ div#game:focus {
 #game.over #focus-error {
   display: none;
 }
+
+
+#game.over #words {
+  display: none;
+}

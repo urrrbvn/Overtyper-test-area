@@ -1,0 +1,11 @@
+#result {
+  display: none;
+}
+
+#game.over #result {
+  position: absolute;
+  inset: 0;
+  text-align: center;
+  padding-top: 35px;
+  font-size: 2rem;
+}
