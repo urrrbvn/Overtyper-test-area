@@ -13,6 +13,5 @@ export function endGame() {
   const gameEl = document.getElementById('game')
   if (!gameEl) return
   addClass(gameEl, 'over')
-  console.log("game over, number of correct letters:", getCpm())
-  document.querySelector("#result").textContent = `CPM: ${getCpm()}`
+  document.querySelector("#cpm").textContent = `CPM: ${getCpm()}`
 }

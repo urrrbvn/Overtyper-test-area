@@ -2,7 +2,8 @@
 #words {
   font-size: 2rem;
   filter: blur(5px);
-  color: var(--textSecondary)
+  color: var(--textSecondary);
+  overflow: hidden
 }
 
 #game:focus #words {
@@ -22,6 +23,10 @@ div#game {
   height: 114px;
   overflow: hidden;
   position: relative;
+  /* padding: 3rem 0; */
+
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
 }
 
 div#game:focus {

@@ -3,9 +3,29 @@
 }
 
 #game.over #result {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   inset: 0;
-  text-align: center;
   padding-top: 35px;
   font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    left: -10%;
+  }
+
+  50% {
+    opacity: 0.5;
+    left: 25%;
+  }
+
+  100% {
+    opacity: 1;
+    left: 50%;
+  }
 }
