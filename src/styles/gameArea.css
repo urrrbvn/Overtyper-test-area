@@ -3,7 +3,10 @@
   font-size: 2rem;
   filter: blur(5px);
   color: var(--textSecondary);
-  overflow: hidden
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 37px;
 }
 
 #game:focus #words {
@@ -19,8 +22,8 @@
 
 /* Секция стилей для самого блока с тестом */
 div#game {
-  line-height: 35px;
-  height: 114px;
+  /* line-height: 35px; */
+  height: 111px;
   overflow: hidden;
   position: relative;
   /* padding: 3rem 0; */
