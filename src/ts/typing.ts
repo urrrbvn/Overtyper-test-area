@@ -8,9 +8,14 @@ import { runTimer } from "./timer"
 export function handleTyping(e: KeyboardEvent) {
   const key = e.key
 
+
+  const words = document.getElementById("words")
   const currentWord = document.querySelector(".word.current")
   const currentLetter = document.querySelector('.letter.current')
+  const game = document.getElementById('game')
+  if (!game) return
   if (!currentWord) return
+  if (!words) return
   //мы не проверяем здесь наличие currentLetter, потому что в этом случае нам не нужен выход из функции
 
 
@@ -48,6 +53,11 @@ export function handleTyping(e: KeyboardEvent) {
     addClass(currentWord.nextElementSibling, 'current')
     removeClass(currentLetter, "current")
     addClass(currentWord.nextElementSibling?.firstElementChild, "current")
+
+    if (currentWord.nextElementSibling.getBoundingClientRect().top > game.getBoundingClientRect().top + 74) {
+      const margin = parseInt(words.style.marginTop || "0px")
+      words.style.marginTop = (margin - 35) + "px"
+    }
   }
   if (isBackspace) {
     if (currentLetter && isFirstLetter) {
@@ -69,10 +79,12 @@ export function handleTyping(e: KeyboardEvent) {
       if (currentWord.lastElementChild?.className.includes('extra')) {
         currentWord.removeChild(currentWord.lastElementChild)
       }
-      // removeClass(currentWord.lastElementChild?.previousElementSibling, 'correct')
-      // removeClass(currentWord.lastElementChild?.previousElementSibling, 'incorrect')
     }
   }
+
+
+
+
 
   moveCursor()
 }

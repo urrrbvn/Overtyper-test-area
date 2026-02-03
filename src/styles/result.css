@@ -1,0 +1,27 @@
+#result {
+  display: none;
+}
+
+#game.over #result {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    left: -10%;
+  }
+
+  50% {
+    opacity: 0.5;
+    left: 25%;
+  }
+
+  100% {
+    opacity: 1;
+    left: 50%;
+  }
+}
