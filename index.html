@@ -14,14 +14,19 @@
         <div id="info">
           30
         </div>
-        <div id="buttons">
-          <button >start</button>
-        </div>
+       
       </div>
-      <div id="game" tabindex="0">
+      <div id="game"  tabindex="0">
         <div id="words"></div>
-        <div id="cursor"></div>
+        <div class="result-wrapper">
+          <div class="stats">
+            <span id="cpm"><span> CPM</span></span>
+            <span id="result-text">resut</span>
+          </div>
+        </div>
         <div id="focus-error">Click here to focus</div>
+      </div>
+        <div id="cursor"></div>
       </div>
     </main>
     <script type="module" src="/src/main.ts"></script>
