@@ -7,10 +7,13 @@ import { runTimer } from "./timer"
 
 export function handleTyping(e: KeyboardEvent) {
   const key = e.key
-
+  const words = document.getElementById("words")
+  const game = document.getElementById('game')
   const currentWord = document.querySelector(".word.current")
   const currentLetter = document.querySelector('.letter.current')
+  if (!game) return
   if (!currentWord) return
+  if (!words) return
   //мы не проверяем здесь наличие currentLetter, потому что в этом случае нам не нужен выход из функции
 
 
@@ -20,7 +23,7 @@ export function handleTyping(e: KeyboardEvent) {
   const isBackspace: Boolean = key === "Backspace"
   const isFirstLetter = currentLetter === currentWord.firstElementChild
 
-  if (!window.timer && isLetter) {
+  if (!window.timer) {
     runTimer()
   }
 
@@ -48,6 +51,12 @@ export function handleTyping(e: KeyboardEvent) {
     addClass(currentWord.nextElementSibling, 'current')
     removeClass(currentLetter, "current")
     addClass(currentWord.nextElementSibling?.firstElementChild, "current")
+
+
+    if (currentWord.nextElementSibling.getBoundingClientRect().top > game.getBoundingClientRect().top + 74) {
+      const margin = parseInt(words.style.marginTop || "0px")
+      words.style.marginTop = (margin - 37) + "px"
+    }
   }
   if (isBackspace) {
     if (currentLetter && isFirstLetter) {

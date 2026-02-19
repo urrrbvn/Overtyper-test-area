@@ -2,7 +2,9 @@
 #words {
   font-size: 2rem;
   filter: blur(5px);
-  color: var(--textSecondary)
+  color: var(--textSecondary);
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #game:focus #words {
@@ -18,8 +20,8 @@
 
 /* Секция стилей для самого блока с тестом */
 div#game {
-  line-height: 35px;
-  height: 114px;
+  line-height: 37px;
+  height: 111px;
   overflow: hidden;
   position: relative;
 }
