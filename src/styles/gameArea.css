@@ -66,16 +66,21 @@ div#game:focus {
   display: none;
 }
 
-#game .result {
-  display: none;
-}
-
-#game.over .result-wrapper {
+#game .result-wrapper {
   display: flex;
   width: 100%;
   height: 100%;
   align-items: center;
   justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+
+  transition: all 0.5s ease;
+}
+
+#game.over .result-wrapper {
+  visibility: visible;
+  opacity: 1;
 }
 
 .stats {
