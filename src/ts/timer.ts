@@ -1,7 +1,7 @@
 import { endGame } from "./endGame";
 
 
-const gameTime = 30 * 1000
+const gameTime = 29 * 1000
 
 export function runTimer() {
   window.timer = setInterval(() => {

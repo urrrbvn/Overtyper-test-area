@@ -112,6 +112,8 @@ div#game:focus {
 
 #game.over #words {
   display: none;
+}
 
-
+main:has(#game.over) #header {
+  visibility: hidden;
 }

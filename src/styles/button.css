@@ -18,3 +18,16 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+#control {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  visibility: hidden;
+}
+
+#game.over+#control {
+  visibility: visible;
+}

@@ -52,8 +52,8 @@ export function handleTyping(e: KeyboardEvent) {
     removeClass(currentLetter, "current")
     addClass(currentWord.nextElementSibling?.firstElementChild, "current")
 
-
-    if (currentWord.nextElementSibling.getBoundingClientRect().top > game.getBoundingClientRect().top + 74) {
+    //Промотка строк 
+    if (currentWord.nextElementSibling.getBoundingClientRect().top >= game.getBoundingClientRect().top + 74) {
       const margin = parseInt(words.style.marginTop || "0px")
       words.style.marginTop = (margin - 37) + "px"
     }
