@@ -3,10 +3,8 @@
   font-size: 2rem;
   filter: blur(5px);
   color: var(--textSecondary);
-  overflow: hidden;
   display: flex;
   flex-wrap: wrap;
-  line-height: 37px;
 }
 
 #game:focus #words {
@@ -22,7 +20,7 @@
 
 /* Секция стилей для самого блока с тестом */
 div#game {
-  /* line-height: 35px; */
+  line-height: 37px;
   height: 111px;
   overflow: hidden;
   position: relative;
@@ -34,6 +32,11 @@ div#game {
 
 div#game:focus {
   outline: 0;
+}
+
+#info {
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 /* Буквы  */
@@ -69,7 +72,52 @@ div#game:focus {
   display: none;
 }
 
+#game .result-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+
+  transition: all 0.5s ease;
+}
+
+#game.over .result-wrapper {
+  visibility: visible;
+  opacity: 1;
+}
+
+.stats {
+  height: 100%;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  border: 1px solid var(--textPrimary);
+
+}
+
+#cpm {
+  font-size: 3rem;
+}
+
+#cpm span {
+  font-size: 1rem;
+}
+
+#result-text {
+  font-size: 2rem;
+  font-weight: 100;
+}
 
 #game.over #words {
   display: none;
+}
+
+main:has(#game.over) #header {
+  visibility: hidden;
 }

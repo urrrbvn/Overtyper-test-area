@@ -36,6 +36,8 @@ body {
 
 
 #header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }

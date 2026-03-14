@@ -1,5 +1,6 @@
 export function addClass(el: Element | null | undefined, name: string) {
   if (!el) return
+  // el.className += " " + name
   el.classList.add(name)
 }
 export function removeClass(el: Element | null | undefined, name: string) {

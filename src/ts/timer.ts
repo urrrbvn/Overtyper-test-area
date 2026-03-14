@@ -1,7 +1,7 @@
 import { endGame } from "./endGame";
 
 
-const gameTime = 30 * 1000
+const gameTime = 29 * 1000
 
 export function runTimer() {
   window.timer = setInterval(() => {
@@ -18,8 +18,11 @@ export function runTimer() {
     infoEl.textContent = sLeft + '';
 
     if (sLeft <= 0) {
+      clearInterval(window.timer as number)
+      window.gameStartTime = null
       endGame()
       return
     }
   }, 1000);
 }
+
