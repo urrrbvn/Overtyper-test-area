@@ -78,10 +78,12 @@ export function handleTyping(e: KeyboardEvent) {
       if (currentWord.lastElementChild?.className.includes('extra')) {
         currentWord.removeChild(currentWord.lastElementChild)
       }
-      // removeClass(currentWord.lastElementChild?.previousElementSibling, 'correct')
-      // removeClass(currentWord.lastElementChild?.previousElementSibling, 'incorrect')
     }
   }
+
+
+
+
 
   moveCursor()
 }

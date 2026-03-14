@@ -2,6 +2,7 @@
 @import './styles/gameArea.css';
 @import './styles/button.css';
 @import './styles/cursor.css';
+@import './styles/result.css';
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -16,6 +17,12 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 body {
