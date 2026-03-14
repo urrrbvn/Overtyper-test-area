@@ -14,5 +14,5 @@ export function endGame() {
   let cpmEl = document.getElementById('cpm')
   if (!cpmEl) return
 
-  cpmEl.textContent = `${getCpm()}`
+  cpmEl.textContent = `${getCpm()} CPM`
 }

@@ -1,4 +1,4 @@
-import { addClass } from "../utils"
+import { addClass, removeClass } from "../utils"
 import { moveCursor } from "./cursor"
 
 const words = "i went to the store today it was raining outside i bought some groceries and saw a cat on the way home the cat was fluffy and orange it looked at me for a second then ran away i got home and made a sandwich it was a good day overall even with the rain and the cat was cute".split(" ")
@@ -17,6 +17,14 @@ function processWord() {
 }
 
 export function newGame() {
+  let game = document.getElementById('game')
+  if (!game) return
+  removeClass(game, 'over')
+
+  let timer = document.getElementById('info')
+  if (!timer) return
+  timer.textContent = '30'
+
   let wordsBlock = document.getElementById('words')
   if (!wordsBlock) return
 
@@ -32,5 +40,9 @@ export function newGame() {
   addClass(firstWord, 'current')
   addClass(firstLetter, 'current')
 
+  wordsBlock.style.marginTop = "0px"
+
   moveCursor()
+
+  window.timer = null
 }

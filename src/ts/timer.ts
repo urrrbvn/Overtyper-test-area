@@ -18,8 +18,11 @@ export function runTimer() {
     infoEl.textContent = sLeft + '';
 
     if (sLeft <= 0) {
+      clearInterval(window.timer as number)
+      window.gameStartTime = null
       endGame()
       return
     }
   }, 1000);
 }
+
