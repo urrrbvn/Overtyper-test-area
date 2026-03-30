@@ -1,4 +1,4 @@
-import { newGame } from "./ts/newGame"
+import { newGame } from "./core/newGame"
 import { handleTyping } from "./ts/typing"
 
 
