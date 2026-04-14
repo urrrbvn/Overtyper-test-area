@@ -9,7 +9,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@originjs/vite-plugin-federation": "^1.4.1",
     "typescript": "~5.9.3",
     "vite": "^7.2.4"
+  },
+  "dependencies": {
+    "vite-plugin-federation": "^0.0.1"
   }
 }
