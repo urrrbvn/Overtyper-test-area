@@ -1,5 +1,5 @@
 import { addClass, removeClass } from "../utils"
-import { moveCursor } from "../ts/cursor"
+import { moveCursor } from "../ui/cursor"
 import type { GameState } from "./gameState"
 import type { GameDom } from "./createGameDom"
 

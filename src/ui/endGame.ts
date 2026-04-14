@@ -1,3 +1,4 @@
+import type { GameState } from "../core/gameState"
 import { addClass } from "../utils"
 
 function getCpm() {
@@ -5,14 +6,10 @@ function getCpm() {
   const cpm = allCorrect.length * 2
   return cpm
 }
-export function endGame() {
-  if (window.timer) clearInterval(window.timer)
-  const gameEl = document.getElementById('game')
-  if (!gameEl) return
+export function endGame(gameEl: HTMLElement, cpmEl: HTMLElement, state: GameState) {
+  state.isGameOver = true
   addClass(gameEl, 'over')
-
-  let cpmEl = document.getElementById('cpm')
-  if (!cpmEl) return
-
   cpmEl.textContent = `${getCpm()} CPM`
 }
+
+
