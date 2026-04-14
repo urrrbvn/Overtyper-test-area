@@ -12,7 +12,6 @@ export interface GameDom {
 export function createGameDom(root: HTMLElement): GameDom {
 
   root.innerHTML = `
-    <main>
       <div id="header">
         <div id="info">
           30
@@ -39,14 +38,13 @@ export function createGameDom(root: HTMLElement): GameDom {
           </button>
         </div>
       </div>
-    </main>
   `
   const game = root.querySelector('#game')
   const words = root.querySelector('#words')
   const cursor = root.querySelector('#cursor')
   const timer = root.querySelector('#info')
   const cpm = root.querySelector('#cpm')
-  const repeatBtn = root.querySelector('#repeatBtn')
+  const repeatBtn = root.querySelector('#repeat-btn')
 
   if (!(game instanceof HTMLElement)) throw new Error('game not found');
   if (!(words instanceof HTMLElement)) throw new Error('words not found');

@@ -27,7 +27,7 @@ export function newGameFactory(dom: GameDom, state: GameState) {
 
     dom.words.style.marginTop = "0px"
 
-    moveCursor()
+    moveCursor(dom)
 
   }
 }

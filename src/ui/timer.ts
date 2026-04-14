@@ -22,7 +22,7 @@ export function runTimer(dom: GameDom, state: GameState) {
       endGame(dom.game, dom.cpm, state)
       return
     }
-    dom.timer.textContent = `${Math.floor(elapsedTime / 1000)}`
+    dom.timer.textContent = `${Math.floor(remainingTime / 1000)}`
   }, 1000);
 }
 
