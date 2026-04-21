@@ -2,15 +2,17 @@ import { newGameFactory } from "./newGame";
 import { typingHandlerFactory } from "../ui/typing";
 import { createGameDom } from "./createGameDom";
 import { createGameState } from "./gameState";
-
+import '../style.css'
 
 
 export type OvertyperTestArea = {
   destroy: () => void;
 }
 
-export function mount(container: HTMLElement): OvertyperTestArea {
-  const dom = createGameDom(container)
+
+function mount(params: { container: HTMLElement }): OvertyperTestArea {
+
+  const dom = createGameDom(params.container)
   const state = createGameState()
 
   const newGame = newGameFactory(dom, state)
@@ -25,8 +27,9 @@ export function mount(container: HTMLElement): OvertyperTestArea {
     destroy() {
       dom.game.removeEventListener('keyup', typingHandler)
       dom.repeatBtn.removeEventListener('click', newGame)
-      container.innerHTML = ``
+      params.container.innerHTML = ``
     }
   }
 
 }
+export default { mount }
