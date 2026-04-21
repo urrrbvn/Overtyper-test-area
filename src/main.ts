@@ -1,9 +1,10 @@
-import { newGame } from "./ts/newGame"
-import { handleTyping } from "./ts/typing"
+import mount from "./core/bootstrap"
 
+const container = document.getElementById('app')
 
+if (!container) {
+  alert('no container')
+} else {
+  mount({ container })
+}
 
-
-document.getElementById('game')?.addEventListener('keyup', handleTyping)
-document.getElementById('repeat-btn')?.addEventListener('click', newGame)
-newGame()

@@ -6,10 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "watch:preview": "concurrently \"vite build --watch\" \"vite preview --port 3001\""
   },
   "devDependencies": {
+    "@originjs/vite-plugin-federation": "^1.4.1",
     "typescript": "~5.9.3",
     "vite": "^7.2.4"
+  },
+  "dependencies": {
+    "vite-plugin-federation": "^0.0.1"
   }
 }
