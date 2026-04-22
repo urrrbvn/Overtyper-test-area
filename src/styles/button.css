@@ -1,4 +1,4 @@
-button {
+.otta_repeat-btn {
   border-radius: 8px;
   border: 1px solid transparent;
   font-size: 1em;
@@ -14,16 +14,16 @@ button {
   justify-content: center;
 }
 
-button:hover {
+.otta_repeat-btn:hover {
   border-color: #646cff;
 }
 
-button:focus,
-button:focus-visible {
+.otta_repeat-btn:focus,
+.otta_repeat-btn:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-#control {
+#otta_control {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -32,6 +32,6 @@ button:focus-visible {
   visibility: hidden;
 }
 
-#game.over+#control {
+#otta_game.otta_over+#otta_control {
   visibility: visible;
 }
