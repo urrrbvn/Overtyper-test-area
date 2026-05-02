@@ -4,8 +4,8 @@ import type { GameDom } from "../core/createGameDom"
 
 export function moveCursor(dom: GameDom) {
 
-  let nextLetter = dom.words.querySelector('.letter.current')
-  let nextWord = dom.words.querySelector('.word.current')
+  let nextLetter = dom.words.querySelector('.otta_letter.otta_current')
+  let nextWord = dom.words.querySelector('.otta_word.otta_current')
   let anchor = nextLetter || nextWord
   if (!anchor) return
 
