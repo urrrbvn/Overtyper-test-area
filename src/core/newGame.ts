@@ -6,7 +6,7 @@ import type { GameDom } from "./createGameDom"
 
 export function newGameFactory(dom: GameDom, state: GameState) {
   return function newGame() {
-    removeClass(dom.game, 'over')
+    removeClass(dom.game, 'otta_over')
 
     if (state.gameTimer !== null) {
       clearInterval(state.gameTimer)
@@ -19,11 +19,11 @@ export function newGameFactory(dom: GameDom, state: GameState) {
       dom.words.innerHTML += processWords()
     }
 
-    let firstWord = dom.words.querySelector('.word')
-    let firstLetter = dom.words.querySelector('.letter')
+    let firstWord = dom.words.querySelector('.otta_word')
+    let firstLetter = dom.words.querySelector('.otta_letter')
 
-    addClass(firstWord, 'current')
-    addClass(firstLetter, 'current')
+    addClass(firstWord, 'otta_current')
+    addClass(firstLetter, 'otta_current')
 
     dom.words.style.marginTop = "0px"
 
@@ -42,6 +42,6 @@ function getRandomWord() {
 function processWords() {
   let word = getRandomWord()
 
-  return `<div class="word"><span class="letter">${word.split('').join('</span><span class="letter">')}</span></div>`
+  return `<div class="otta_word"><span class="otta_letter">${word.split('').join('</span><span class="otta_letter">')}</span></div>`
 }
 

@@ -1,6 +1,6 @@
 /* #cursor {} */
 
-#game:focus #cursor {
+#otta_game:focus #otta_cursor {
   width: 2px;
   height: 2rem;
   background: var(--primaryColor);
@@ -8,7 +8,7 @@
   animation: blink .3s infinite;
 }
 
-#game.over #cursor {
+#otta_game.otta_over #otta_cursor {
   display: none;
 }
 

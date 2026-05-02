@@ -10,8 +10,8 @@ export function typingHandlerFactory(dom: GameDom, state: GameState) {
 
     const key = e.key
 
-    const currentWord = dom.words.querySelector(".current")
-    const currentLetter = dom.words.querySelector('.letter.current')
+    const currentWord = dom.words.querySelector(".otta_current")
+    const currentLetter = dom.words.querySelector('.otta_letter.otta_current')
     if (!currentWord) return
     //мы не проверяем здесь наличие currentLetter, потому что в этом случае нам не нужен выход из функции
 
@@ -28,28 +28,28 @@ export function typingHandlerFactory(dom: GameDom, state: GameState) {
 
     if (isLetter) {
       if (currentLetter) {
-        addClass(currentLetter, key === expected ? "correct" : "incorrect")
-        removeClass(currentLetter, 'current')
-        addClass(currentLetter?.nextElementSibling, 'current')
+        addClass(currentLetter, key === expected ? "otta_correct" : "otta_incorrect")
+        removeClass(currentLetter, 'otta_current')
+        addClass(currentLetter?.nextElementSibling, 'otta_current')
       } else { //по сути это значит что мы в конце слова и пишем неправильные символы
         let extraLetter = document.createElement("span")
         extraLetter.innerHTML = key
-        extraLetter.className = "letter incorrect extra"
+        extraLetter.className = "otta_letter otta_incorrect otta_extra"
         currentWord.appendChild(extraLetter)
       }
     }
 
     if (isSpace) {
       if (expected !== " ") {
-        const lettersToInvalidate: Element[] = [...dom.words.querySelectorAll(".word.current .letter:not(.correct)")]
+        const lettersToInvalidate: Element[] = [...dom.words.querySelectorAll(".otta_word.otta_current .otta_letter:not(.otta_correct)")]
         lettersToInvalidate.forEach((letter: Element) => {
-          addClass(letter, "incorrect")
+          addClass(letter, "otta_incorrect")
         })
       }
-      removeClass(currentWord, 'current')
-      addClass(currentWord.nextElementSibling, 'current')
-      removeClass(currentLetter, "current")
-      addClass(currentWord.nextElementSibling?.firstElementChild, "current")
+      removeClass(currentWord, 'otta_current')
+      addClass(currentWord.nextElementSibling, 'otta_current')
+      removeClass(currentLetter, "otta_current")
+      addClass(currentWord.nextElementSibling?.firstElementChild, "otta_current")
 
       //Промотка строк 
       const nextWord: Element | null = currentWord.nextElementSibling
@@ -60,22 +60,22 @@ export function typingHandlerFactory(dom: GameDom, state: GameState) {
     }
     if (isBackspace) {
       if (currentLetter && isFirstLetter) {
-        removeClass(currentWord, 'current')
-        addClass(currentWord.previousElementSibling, 'current')
-        removeClass(currentLetter, 'current')
+        removeClass(currentWord, 'otta_current')
+        addClass(currentWord.previousElementSibling, 'otta_current')
+        removeClass(currentLetter, 'otta_current')
       } else if (currentLetter && !isFirstLetter) {
-        removeClass(currentLetter, 'current')
-        removeClass(currentLetter, 'correct')
-        removeClass(currentLetter, 'incorrect')
+        removeClass(currentLetter, 'otta_current')
+        removeClass(currentLetter, 'otta_correct')
+        removeClass(currentLetter, 'otta_incorrect')
 
-        addClass(currentLetter.previousElementSibling, 'current')
-        removeClass(currentLetter.previousElementSibling, 'correct')
-        removeClass(currentLetter.previousElementSibling, 'incorrect')
+        addClass(currentLetter.previousElementSibling, 'otta_current')
+        removeClass(currentLetter.previousElementSibling, 'otta_correct')
+        removeClass(currentLetter.previousElementSibling, 'otta_incorrect')
       } else {
-        removeClass(currentWord.lastElementChild, "incorrect")
-        removeClass(currentWord.lastElementChild, "correct")
-        addClass(currentWord.lastElementChild, 'current')
-        if (currentWord.lastElementChild?.className.includes('extra')) {
+        removeClass(currentWord.lastElementChild, "otta_incorrect")
+        removeClass(currentWord.lastElementChild, "otta_correct")
+        addClass(currentWord.lastElementChild, 'otta_current')
+        if (currentWord.lastElementChild?.className.includes('otta_extra')) {
           currentWord.removeChild(currentWord.lastElementChild)
         }
       }
