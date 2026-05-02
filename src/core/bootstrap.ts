@@ -18,14 +18,14 @@ function mount(params: { container: HTMLElement }): OvertyperTestArea {
   const newGame = newGameFactory(dom, state)
   const typingHandler = typingHandlerFactory(dom, state)
 
-  dom.game.addEventListener('keyup', typingHandler)
+  dom.game.addEventListener('keydown', typingHandler)
   dom.repeatBtn.addEventListener('click', newGame)
 
   newGame()
 
   return {
     destroy() {
-      dom.game.removeEventListener('keyup', typingHandler)
+      dom.game.removeEventListener('kedown', typingHandler)
       dom.repeatBtn.removeEventListener('click', newGame)
       params.container.innerHTML = ``
     }

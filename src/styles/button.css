@@ -1,4 +1,4 @@
-.otta_repeat-btn {
+#otta_repeat-btn {
   border-radius: 8px;
   border: 1px solid transparent;
   font-size: 1em;
@@ -14,12 +14,12 @@
   justify-content: center;
 }
 
-.otta_repeat-btn:hover {
+#otta_repeat-btn:hover {
   border-color: #646cff;
 }
 
-.otta_repeat-btn:focus,
-.otta_repeat-btn:focus-visible {
+#otta_repeat-btn:focus,
+#otta_repeat-btn:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 

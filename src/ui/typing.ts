@@ -10,8 +10,8 @@ export function typingHandlerFactory(dom: GameDom, state: GameState) {
 
     const key = e.key
 
-    const currentWord = dom.words.querySelector(".current")
-    const currentLetter = dom.words.querySelector('.letter.current')
+    const currentWord = dom.words.querySelector(".otta_current")
+    const currentLetter = dom.words.querySelector('.otta_letter.otta_current')
     if (!currentWord) return
     //мы не проверяем здесь наличие currentLetter, потому что в этом случае нам не нужен выход из функции
 
